@@ -18,7 +18,8 @@ class FileStorage:
 
     def new(self, obj):
         """
-            make a new object ready with it class name and id as a key
+            make a new object ready with it class
+            name and id as a key
 
             Args:
                 obj: object passed to save in the dict
@@ -32,12 +33,14 @@ class FileStorage:
         """ serialize objects and save to a json file """
 
         with open(self.__file_path, 'w') as file:
-            data = {key: value.to_dict() for key, value in self.__objects.items()}
+            data = {key: value.to_dict() for \
+                    key, value in self.__objects.items()}
             json.dump(data, file, indent=4)
 
 
     def reload(self):
-        """ check if json file exist if yes retrieve data and return the object """
+        """ check if json file exist if yes retrieve
+        data and return the object """
 
         if os.path.exists(self.__file_path):
             with open(self.__file_path) as file:

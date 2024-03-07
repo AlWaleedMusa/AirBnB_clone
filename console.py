@@ -34,17 +34,26 @@ class HBNBCommand(cmd.Cmd):
             Returns:
                 None
 
-            Splits the command line into class name and function name using the '.' delimiter.
+            Splits the command line into class name and function
+            name using the '.' delimiter.
             Retrieves all data from the storage.
-            Checks if the provided class name matches any of the classes stored in the storage.
-            If so, retrieves instances of that class from the storage and prints their details based on the function name:
-            - If the function is 'all()', prints details of all instances.
-            - If the function is 'count()', prints the number of instances.
-            - If the function contains 'show' and an instance ID enclosed in double quotes, prints details of that instance.
-            - If the function contains 'destroy' and an instance ID enclosed in double quotes, deletes that instance and saves changes to storage.
+            Checks if the provided class name matches any of the
+            classes stored in the storage.
+            If so, retrieves instances of that class from the storage
+            and prints their details based on the function name:
+            - If the function is 'all()', prints details of all
+            instances.
+            - If the function is 'count()', prints the number of
+            instances.
+            - If the function contains 'show' and an instance ID
+            enclosed in double quotes, prints details of that instance.
+            - If the function contains 'destroy' and an instance ID
+            enclosed in double quotes, deletes that instance and
+            saves changes to storage.
 
             Raises:
-                ValueError: If the command line does not contain a '.' delimiter.
+                ValueError: If the command line does not contain
+                a '.' delimiter.
         """
         empty = False
         found = False
@@ -144,14 +153,20 @@ class HBNBCommand(cmd.Cmd):
             Returns:
                 None
 
-            Parses the command line into arguments using shlex.split(). It then performs
+            Parses the command line into arguments using
+            shlex.split(). It then performs
             the following actions:
-            - If no arguments are provided, it prints '** class name missing **'.
-            - If the first argument (class name) is not in the list of available classes,
+            - If no arguments are provided, it prints
+            '** class name missing **'.
+            - If the first argument (class name) is not
+            in the list of available classes,
             it prints '** class doesn't exist **'.
-            - If the class exists, it retrieves the corresponding class object from the
-            classes dictionary. It creates a new instance of that class, saves it to
-            JSON using the save() method, and prints the ID of the newly created instance.
+            - If the class exists, it retrieves the corresponding
+            class object from the
+            classes dictionary. It creates a new instance
+            of that class, saves it to
+            JSON using the save() method, and prints the
+            ID of the newly created instance.
         """
 
         args = shlex.split(line)
@@ -174,13 +189,16 @@ class HBNBCommand(cmd.Cmd):
 
             Args:
                 line (str): Command line passed to the program.
-                action (str): Action to perform, either 'show' or 'destroy'.
+                action (str): Action to perform, either
+                'show' or 'destroy'.
 
             Returns:
                 None
 
-            Prints instance details if found when action is 'show'.
-            Deletes the instance by ID and saves changes to JSON when action is 'destroy'.
+            Prints instance details if found when
+            action is 'show'.
+            Deletes the instance by ID and saves
+            changes to JSON when action is 'destroy'.
         """
         args = shlex.split(line)
 
@@ -222,7 +240,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, line):
         """
-            Print all instances of a specified class or all instances if no class is provided.
+            Print all instances of a specified class
+            or all instances if no class is provided.
 
             Args:
                 line (str): Command line passed to the program.
@@ -230,9 +249,12 @@ class HBNBCommand(cmd.Cmd):
             Returns:
                 None
 
-            If no class is provided in the command line or if the provided class exists,
-            it prints details of all instances of the specified class or all instances
-            if no class is provided. If the specified class doesn't exist, it prints
+            If no class is provided in the command
+            line or if the provided class exists,
+            it prints details of all instances of the
+            specified class or all instances
+            if no class is provided. If the specified
+            class doesn't exist, it prints
             '** class doesn't exist **'
         """
         args = shlex.split(line)
@@ -257,7 +279,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """
-            Process the command line and perform appropriate actions based on the provided arguments.
+            Process the command line and perform appropriate
+            actions based on the provided arguments.
 
             Args:
                 line (str): Command line passed to the program.
@@ -265,20 +288,32 @@ class HBNBCommand(cmd.Cmd):
             Returns:
                 None
 
-            Parses the command line into arguments using shlex.split(). It then performs
-            different actions based on the number and content of the arguments:
-            - If no arguments are provided, it prints '** class name missing **'.
-            - If the first argument (class name) is not in the list of available classes,
+            Parses the command line into arguments using
+            shlex.split(). It then performs
+            different actions based on the number and
+            content of the arguments:
+            - If no arguments are provided, it prints
+            '** class name missing **'.
+            - If the first argument (class name) is not
+            in the list of available classes,
             it prints '** class doesn't exist **'.
-            - If there's only one argument (class name) provided, it prints '** instance id missing **'.
-            - If there's only two arguments provided, it checks if the instance with the specified
-            ID exists. If not, it prints '** no instance found **'; otherwise, it prints
+            - If there's only one argument (class name)
+            provided, it prints '** instance id missing **'.
+            - If there's only two arguments provided,
+            it checks if the instance with the specified
+            ID exists. If not, it prints '** no instance
+            found **'; otherwise, it prints
             '** attribute name missing **'.
-            - If there are three arguments provided, it checks if the instance with the specified
-            ID exists. If found, it sets the specified attribute to the specified value
-            using setattr(), saves the changes to storage, and breaks the loop.
-            If the instance is not found, it prints '** no instance found **'.
-            - If there are more than three arguments provided, it prints '** value missing **'.
+            - If there are three arguments provided, it
+            checks if the instance with the specified
+            ID exists. If found, it sets the specified
+            attribute to the specified value
+            using setattr(), saves the changes to storage,
+            and breaks the loop.
+            If the instance is not found, it prints
+            '** no instance found **'.
+            - If there are more than three arguments
+            provided, it prints '** value missing **'.
         """
 
         args = shlex.split(line)
