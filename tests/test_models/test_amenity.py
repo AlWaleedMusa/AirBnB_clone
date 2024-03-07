@@ -81,6 +81,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(am.created_at, dt)
         self.assertEqual(am.updated_at, dt)
 
+
 class TestAmenity_save(unittest.TestCase):
     """Unittest for testing save method of the Amenity class."""
 

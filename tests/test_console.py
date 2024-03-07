@@ -23,7 +23,7 @@ class TestHBNBCommand(unittest.TestCase):
         int: 0,
         float: 0.0
     }
-    
+
     attribute_values = {
         str: "foobar108",
         int: 1008,
@@ -47,7 +47,6 @@ class TestHBNBCommand(unittest.TestCase):
         FileStorage._FileStorage__objects = {}
         if os.path.isfile(FileStorage._FileStorage__file_path):
             os.remove(FileStorage._FileStorage__file_path)
-
 
     def test_help_EOF(self):
         """Tests the help command."""
