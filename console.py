@@ -65,7 +65,6 @@ class HBNBCommand(cmd.Cmd):
                 empty = True
             elif class_name in self.classes_names:
                 class_name_valid = True
-                
 
         except ValueError:
             pass
@@ -81,7 +80,6 @@ class HBNBCommand(cmd.Cmd):
                 printed_output = string_buffer.getvalue().strip()
                 object_list.append(printed_output)
                 sys.stdout = sys.__stdout__
-
 
         if class_name_valid:
             if function == "all()":
@@ -112,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
                     if not instance_found:
                         print("** no instance found **")
                 else:
-                        print("** instance id missing **")
+                    print("** instance id missing **")
             elif "destroy" in function:
                 try:
                     arg_id = function.split('"')
@@ -135,13 +133,11 @@ class HBNBCommand(cmd.Cmd):
                     if not instance_found:
                         print("** no instance found **")
                 else:
-                        print("** instance id missing **")
+                    print("** instance id missing **")
         elif empty:
             print("** class name missing **")
         else:
             print("** class doesn't exist **")
-            
-
 
     def do_create(self, line):
         """
@@ -176,22 +172,19 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in self.classes.keys():
             print("** class doesn't exist **")
         else:
-            for key , value in self.classes.items():
+            for key, value in self.classes.items():
                 if key == args[0]:
                     instance = value()
                     instance.save()
                     print(instance.id)
 
-
     def handle_show_or_destroy(self, line, action):
         """
             Show or destroy instance details by ID.
-
             Args:
                 line (str): Command line passed to the program.
                 action (str): Action to perform, either
                 'show' or 'destroy'.
-
             Returns:
                 None
 
@@ -234,7 +227,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """Delete instance by id and save changes to Json"""
-
         self.handle_show_or_destroy(line, "destroy")
 
 
@@ -242,13 +234,10 @@ class HBNBCommand(cmd.Cmd):
         """
             Print all instances of a specified class
             or all instances if no class is provided.
-
             Args:
                 line (str): Command line passed to the program.
-
             Returns:
                 None
-
             If no class is provided in the command
             line or if the provided class exists,
             it prints details of all instances of the
@@ -281,13 +270,10 @@ class HBNBCommand(cmd.Cmd):
         """
             Process the command line and perform appropriate
             actions based on the provided arguments.
-
             Args:
                 line (str): Command line passed to the program.
-
             Returns:
                 None
-
             Parses the command line into arguments using
             shlex.split(). It then performs
             different actions based on the number and
@@ -360,7 +346,6 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Doesn't do anything on ENTER """
         pass
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
