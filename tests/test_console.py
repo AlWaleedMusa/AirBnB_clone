@@ -101,7 +101,7 @@ class TestHBNBCommand(unittest.TestCase):
     #     """Tests the help command."""
     #     with patch('sys.stdout', new=StringIO()) as f:
     #         HBNBCommand().onecmd("help update")
-    #     s = 'Updates an instance by adding or updating attribute.\n        \n'
+    #     s = 'Updates instance by adding or updating attribute.\n        \n'
     #     self.assertEqual(s, f.getvalue())
 
     def test_do_quit(self):
@@ -645,7 +645,8 @@ class TestHBNBCommand(unittest.TestCase):
         # self.assertEqual(msg, "** attribute name missing **")
 
         # with patch('sys.stdout', new=StringIO()) as f:
-        #     HBNBCommand().onecmd('BaseModel.update("{}", "name")'.format(uid))
+        #     HBNBCommand().onecmd('BaseModel.update("{}","name")'
+        #                          .format(uid))
         # msg = f.getvalue()[:-1]
         # self.assertEqual(msg, "** value missing **")
 
