@@ -218,7 +218,6 @@ class HBNBCommand(cmd.Cmd):
             if not instance_found:
                 print("** no instance found **")
 
-
     def do_show(self, line):
         """Show instance details by id"""
 
@@ -228,7 +227,6 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, line):
         """Delete instance by id and save changes to Json"""
         self.handle_show_or_destroy(line, "destroy")
-
 
     def do_all(self, line):
         """
@@ -333,7 +331,6 @@ class HBNBCommand(cmd.Cmd):
                     storage.save()
                     break
 
-
     def do_quit(self, line):
         """Quit command to exit the program"""
         return True
@@ -342,10 +339,11 @@ class HBNBCommand(cmd.Cmd):
         """Quite the program when EOF is checks True"""
         print()
         return True
-    
+
     def emptyline(self):
         """Doesn't do anything on ENTER """
         pass
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
