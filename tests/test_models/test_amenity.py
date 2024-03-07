@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Defines unittest for models/amenity.py.
 
 Unittest classes:

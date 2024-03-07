@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Module for TestHBNBCommand class."""
 
 from console import HBNBCommand

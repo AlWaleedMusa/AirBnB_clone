@@ -1,6 +1,7 @@
 #!/user/bin/env python3
 
-""" """
+""" class representing User
+that inhere from BaseModel """
 
 from models.base_model import BaseModel
 

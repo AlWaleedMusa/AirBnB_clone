@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" This is the main Console class
+that run the whole show"""
+
 import cmd
 import io
 import sys

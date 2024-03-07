@@ -1,4 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+
+""" this is the file storage class """
 
 import json
 import os
@@ -46,6 +48,8 @@ class FileStorage:
                 return obj_dict
 
     def classes(self):
+        """ return a dict of key value with all
+        classed available """
         from models.base_model import BaseModel
         from models. user import User
         from models.state import State
