@@ -6,6 +6,7 @@ import datetime
 import uuid
 from models import storage
 
+
 class BaseModel:
     """ creating a base model """
 
@@ -30,8 +31,8 @@ class BaseModel:
                         setattr(
                             self,
                             key,
-                            datetime.datetime.strptime\
-                                (value, '%Y-%m-%dT%H:%M:%S.%f'))
+                            datetime.datetime.strptime
+                            (value, '%Y-%m-%dT%H:%M:%S.%f'))
                     else:
                         setattr(self, key, value)
                 else:
