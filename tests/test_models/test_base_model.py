@@ -19,7 +19,7 @@ class TestBaseModel(unittest.TestCase):
                                updated_at=now)
         self.assertEqual(base_model.id, "123")
         self.assertEqual(base_model.created_at.strftime
-                         ("%Y-%m-%dT%H:%M:%S.%f"),now)
+                         ("%Y-%m-%dT%H:%M:%S.%f"), now)
         self.assertEqual(base_model.updated_at.strftime
                          ("%Y-%m-%dT%H:%M:%S.%f"), now)
 
