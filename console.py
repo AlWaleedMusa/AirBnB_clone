@@ -223,7 +223,6 @@ class HBNBCommand(cmd.Cmd):
 
         self.handle_show_or_destroy(line, "show")
 
-
     def do_destroy(self, line):
         """Delete instance by id and save changes to Json"""
         self.handle_show_or_destroy(line, "destroy")
@@ -262,7 +261,6 @@ class HBNBCommand(cmd.Cmd):
                 print(new_list)
         else:
             print("** class doesn't exist **")
-
 
     def do_update(self, line):
         """
