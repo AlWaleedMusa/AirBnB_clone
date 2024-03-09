@@ -11,6 +11,7 @@ import datetime
 
 
 class TestBaseModel(unittest.TestCase):
+    """Unittest for testing instantiation of the BaseModel class."""
 
     def test_initialization_with_args(self):
         now = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")
