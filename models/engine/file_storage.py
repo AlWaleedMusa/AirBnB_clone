@@ -48,6 +48,8 @@ class FileStorage:
                 object_dict = {key: self.classes()[value["__class__"]](**value)
                         for key, value in object_dict.items()}
                 FileStorage.__objects = object_dict
+        else:
+            return
 
     def classes(self):
         """ return a dict of key value with all
