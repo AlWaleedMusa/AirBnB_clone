@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """ create a storage """
 
 from models.engine import file_storage
