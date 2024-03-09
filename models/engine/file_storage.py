@@ -42,7 +42,7 @@ class FileStorage:
         """ check if json file exist if yes retrieve
         data and return the object """
 
-        if os.path.exists(FileStorage.__file_path):
+        if os.path.isfile(FileStorage.__file_path):
             with open(FileStorage.__file_path, encoding="utf-8") as file:
                 object_dict = json.load(file)
                 object_dict = {key: self.classes()[value["__class__"]](**value)
