@@ -15,7 +15,7 @@ class FileStorage:
     def all(self):
         """ return all objects in the dict """
 
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """
@@ -27,25 +27,27 @@ class FileStorage:
         """
 
         pk = "{}.{}".format(obj.__class__.__name__, obj.id)
-        self.__objects[pk] = obj
+        FileStorage.__objects[pk] = obj
 
     def save(self):
         """ serialize objects and save to a json file """
 
-        with open(self.__file_path, 'w') as file:
+        with open(FileStorage.__file_path, 'w', encoding="utf-8") as file:
             data = {
                 key: value.to_dict() for key,
-                value in self.__objects.items()}
+                value in FileStorage.__objects.items()}
             json.dump(data, file)
 
     def reload(self):
         """ check if json file exist if yes retrieve
         data and return the object """
 
-        if os.path.exists(self.__file_path):
-            with open(self.__file_path) as file:
-                obj_dict = json.load(file)
-                return obj_dict
+        if os.path.exists(FileStorage.__file_path):
+            with open(FileStorage.__file_path, encoding="utf-8") as file:
+                object_dict = json.load(file)
+                object_dict = {key: self.classes()[value["__class__"]](**value)
+                        for key, value in object_dict.items()}
+                FileStorage.__objects = object_dict
 
     def classes(self):
         """ return a dict of key value with all
