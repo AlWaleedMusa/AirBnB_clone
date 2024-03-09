@@ -36,7 +36,7 @@ class FileStorage:
             data = {
                 key: value.to_dict() for key,
                 value in self.__objects.items()}
-            json.dump(data, file, indent=4)
+            json.dump(data, file)
 
     def reload(self):
         """ check if json file exist if yes retrieve
