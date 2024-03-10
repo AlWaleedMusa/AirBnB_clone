@@ -63,4 +63,4 @@ in the Folder **Model** You will find all these Classes used in this project
 
 # Authors
 
-[AlWaleed Musa](https://github.com/AlWaleedMusa) As a mobile repair technician, I am eager to transition my career to web development through the ALX program. This opportunity aligns perfectly with my passion.
+[AlWaleed Musa](https://github.com/AlWaleedMusa) A mobile repair technician eager to transition my career to web development through the ALX program.
