@@ -1,4 +1,4 @@
-![Example Image](images/hbnb.png "Example")
+![Example Image](images/hbnb.png "HBNB Logo")
 
 # HBNB Project (AirBnB clone - The console)
 
