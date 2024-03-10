@@ -50,7 +50,7 @@ $
 # Models
 in the Folder **Model** You will find all these Classes used in this project
 
-| Model                     | Description | Attr |
+| Model                     | Description | Attributes |
 |---------------------------|-------------|------|
 |[base_model.py](models/base_model.py)|Base class to all other models|ID, Created_at, Updated_at|
 |[user.py](models/user.py)| User information |Email, Password, First_name, Last_name|
