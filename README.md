@@ -55,10 +55,10 @@ in the Folder **Model** You will find all these Classes used in this project
 |[base_model.py](models/base_model.py)|Base class to all other models|ID, Created_at, Updated_at|
 |[user.py](models/user.py)| User information |Email, Password, First_name, Last_name|
 |[amenity.py](models/amenity.py)|Amenity information|Name|
-|[City.py](models/city.py)|City information|State_id, Name|
-|[State.py](models/state.py)|State information|Name|
-|[Place.py](models/Place.py)|Place information|City_id, User_id, Name, Description, Number_rooms, Number_bathrooms, Max_guest, Price_by_night, Latitude, Longitude, Amenity_ids|
-|[Review.py](models/review.py)|User/Place Reviews information|Place_id, User_id, Text|
+|[city.py](models/city.py)|City information|State_id, Name|
+|[state.py](models/state.py)|State information|Name|
+|[place.py](models/place.py)|Place information|City_id, User_id, Name, Description, Number_rooms, Number_bathrooms, Max_guest, Price_by_night, Latitude, Longitude, Amenity_ids|
+|[review.py](models/review.py)|User/Place Reviews information|Place_id, User_id, Text|
 <br>
 
 # Authors
